@@ -1,8 +1,5 @@
 from os import path as osp
 
-import os
-
-
 
 BASE_DIR = osp.abspath(osp.dirname(__file__))
 
