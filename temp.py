@@ -1,12 +1,11 @@
 import logging
+import settings
 
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = "856212558:AAHjTTJvmNATH8_oH-7kwUyOIZO9nDp3TEg"
-
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=settings.BOT_TOKEN)
 dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start','help'])
