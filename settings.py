@@ -7,3 +7,6 @@ BASE_POINT_URL = r'http://point.im/api/'
 with open(osp.join(BASE_DIR, 'bot.token'), mode="r", encoding='utf-8') as bt_file:
     BOT_TOKEN = bt_file.readline().strip()
 
+DATABASE = {
+    'path': osp.join(BASE_DIR, 'db.sqlite'),
+}
