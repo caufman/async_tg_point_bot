@@ -14,6 +14,11 @@ async def send_welcome(message: types.Message):
     await message.reply('пробный бот by cauf приветствует тебя!')
 
 
+@dp.message_handler(commands=['login',])
+async def point_login(message: types.Message):
+    
+    await message.reply(f'')
+
 @dp.message_handler()
 async def echo(message: types.Message):
     await bot.send_message(message.chat.id, message.text)
