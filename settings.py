@@ -1,12 +1,16 @@
 from os import path as osp
+from configparser import ConfigParser
 
 
 BASE_DIR = osp.abspath(osp.dirname(__file__))
 BASE_POINT_URL = r'http://point.im/api/'
 
-with open(osp.join(BASE_DIR, 'bot.token'), mode="r", encoding='utf-8') as bt_file:
-    BOT_TOKEN = bt_file.readline().strip()
+PSWD = ConfigParser()
+PSWD.read(osp.join(BASE_DIR,'pswd.ini'))
+
+BOT_TOKEN = PSWD['Tokens']['telegrambot']
 
 DATABASE = {
-    'path': osp.join(BASE_DIR, 'db.sqlite'),
+    'role': 'tgbot',
+    'password': PSWD['Passwords']['postgresql'],
 }
