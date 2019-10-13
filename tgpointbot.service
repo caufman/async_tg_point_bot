@@ -1,0 +1,12 @@
+[Unit]
+Description=Telegram-bot for Point.im
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/zsh -c "cd /usr/local/www/tgpointbot && source /usr/local/envs/tgpointbot/bin/activate"
+ExecStart=/usr/local/envs/tgpointbot/bin/python /usr/local/www/tgpointbot/temp.py
+Restart=True
+
+[Install]
+WantedBy=multi-user.target
+

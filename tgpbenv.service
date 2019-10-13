@@ -1,0 +1,15 @@
+[Unit]
+Description=Python env fot Telegram-bot for Point.im
+After=network.target
+
+[Service]
+User=cauf
+Group=www
+Environment=VIRTUAL_ENV=/usr/local/envs/tgpointbot
+Environment=PATH=$VIRTUAL_ENV/bin:$PATH
+ExecStart=$VIRTUAL_ENV/bin/activate
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
