@@ -1,6 +1,11 @@
 from os import path as osp
-
+from configparser import ConfigParser
 
 BASE_DIR = osp.abspath(osp.dirname(__file__))
 
-BOT_TOKEN = '856212558:AAHjTTJvmNATH8_oH-7kwUyOIZO9nDp3TEg'
+TOKENS_PATH = osp.join(BASE_DIR, "tokens.ini")
+TOKENS = ConfigParser()
+TOKENS.read(TOKENS_PATH)
+
+BOT_TOKEN = TOKENS['API_Token']['Telegram_Bot']
+
