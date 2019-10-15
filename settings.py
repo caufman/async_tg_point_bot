@@ -13,4 +13,7 @@ BOT_TOKEN = PSWD['Tokens']['telegrambot']
 DATABASE = {
     'role': 'tgbot',
     'password': PSWD['Passwords']['postgresql'],
+    'database': 'tgpointbot',
+    'host': '127.0.0.1',
+    'port': '7070',
 }
